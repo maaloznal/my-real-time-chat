@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="title">Чатимся, ребята</h1>
+    <div class="main">
+      <div class="name">
+        <span><i class="far fa-user"></i></span>
+        <input
+          type="text"
+          id="name-input"
+          class="name-input"
+          value="Гость"
+          maxlength="20"
+        />
+      </div>
+
+      <ul class="message-container" id="message-container">
+        <li class="message-left">
+          <p class="message">
+            lorem impsun
+            <span>Кто-то -- 16.11.2024</span>
+          </p>
+        </li>
+
+        <li class="message-right">
+          <p class="message">
+            lorem impsun
+            <span>Кто-то -- 16.11.2024</span>
+          </p>
+        </li>
+
+        <li class="message-feedback">
+          <p class="feedback" id="feedback">Человек печатает текст</p>
+        </li>
+      </ul>
+      <form class="message-form" id="message-form">
+        <input
+          type="text"
+          name="message"
+          id="message-input"
+          class="message-input"
+        />
+        <div class="b-divder"></div>
+        <button type="submit" class="send-button">
+          Отправить <span><i class="fas fa-paper-plane"></i></span>
+        </button>
+      </form>
+      <h3 class="total-client" id="total-client">Пользователей в чате: 2</h3>
+    </div>
+  </body>
+</html>
