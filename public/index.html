@@ -2,27 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <link
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>WebSocket Чат</title>
-  </head>
-  <body>
-    </div>
-    <div class="main">
+      />
+      <link rel="stylesheet" href="style.css" />
+      <title>WebSocket Чат</title>
+    </head>
+    <body>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2>Введите своё имя</h2>
+          <input type="text" id="modal-name-input" class="modal-input" placeholder="Ваше имя" maxlength="20" />
+          <button id="modal-submit" class="modal-button">Войти</button>
+        </div>
+      </div>
+      <div class="main">
       <div class="name">
         <span><i class="far fa-user"></i></span>
         <input
           type="text"
           id="name-input"
           class="name-input"
-          value="Гость"
+          value=""
           maxlength="20"
+          disabled
         />
       </div>
       <ul id="feedback-container">
@@ -30,8 +41,7 @@
           <p class="feedback" id="feedback"></p>
         </li>
       </ul>
-      <ul class="message-container" id="message-container">
-      </ul>
+      <ul class="message-container" id="message-container"></ul>
       <form class="message-form" id="message-form">
         <input
           type="text"

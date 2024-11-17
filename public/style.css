@@ -178,6 +178,50 @@ li {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background-color: #218838;
+}
+
+
 @media (max-width: 480px) {
   body {
     padding: 10px;
@@ -233,5 +277,24 @@ li {
   .clients-total {
     font-size: 16px;
     margin: 15px 0;
+  }
+
+  .modal-content {
+    width: 90%; 
+    padding: 15px; 
+  }
+
+  .modal-input {
+    font-size: 14px; 
+    padding: 8px; 
+  }
+
+  .modal-button {
+    font-size: 14px; 
+    padding: 8px 16px; 
+  }
+
+  h2 {
+    font-size: 18px; 
   }
 }

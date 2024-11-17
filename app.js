@@ -21,29 +21,18 @@ wss.on("connection", (ws) => {
 
   socketsConnected.add(socketId);
 
+  const welcomeMessage = `Добро пожаловать! Пожалуйста, введите своё имя.`;
+
+  ws.send(
+    JSON.stringify({
+      type: "welcome",
+      data: welcomeMessage,
+    })
+  );
+
   broadcastMessage({
     type: "clients-total",
     data: socketsConnected.size,
-  });
-
-  ws.on("message", (message) => {
-    const parsedMessage = JSON.parse(message);
-
-    switch (parsedMessage.type) {
-      case "message":
-        broadcastMessage({
-          type: "chat-message",
-          data: parsedMessage.data,
-        }, ws);
-        break;
-
-      case "feedback":
-        broadcastMessage({
-          type: "feedback",
-          data: parsedMessage.data,
-        }, ws);
-        break;
-    }
   });
 
   ws.on("close", () => {
@@ -54,6 +43,45 @@ wss.on("connection", (ws) => {
       type: "clients-total",
       data: socketsConnected.size,
     });
+
+    broadcastMessage({
+      type: "user-left",
+      data: `${ws.userName || 'Гость'} покинул чат`,
+    });
+  });
+
+  ws.on("message", (message) => {
+    const parsedMessage = JSON.parse(message);
+
+    switch (parsedMessage.type) {
+      case "set-name":
+        ws.userName = parsedMessage.data.name;
+        broadcastMessage({
+          type: "welcome",
+          data: `Добро пожаловать, ${ws.userName}!`,
+        });
+        break;
+
+      case "message":
+        broadcastMessage(
+          {
+            type: "chat-message",
+            data: parsedMessage.data,
+          },
+          ws
+        );
+        break;
+
+      case "feedback":
+        broadcastMessage(
+          {
+            type: "feedback",
+            data: parsedMessage.data,
+          },
+          ws
+        );
+        break;
+    }
   });
 });
 
