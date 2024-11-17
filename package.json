@@ -1,5 +1,5 @@
 {
-  "name": "my-chat",
+  "name": "websocketproject",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.1",
-    "socket.io": "^4.8.1"
+    "momentjs": "^2.0.0",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"

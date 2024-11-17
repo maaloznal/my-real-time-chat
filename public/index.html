@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -11,10 +10,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>WebSocket Чат</title>
   </head>
   <body>
-    <h1 class="title">Чатимся, ребята</h1>
+    </div>
     <div class="main">
       <div class="name">
         <span><i class="far fa-user"></i></span>
@@ -26,25 +25,12 @@
           maxlength="20"
         />
       </div>
-
-      <ul class="message-container" id="message-container">
-        <li class="message-left">
-          <p class="message">
-            lorem impsun
-            <span>Кто-то -- 16.11.2024</span>
-          </p>
-        </li>
-
-        <li class="message-right">
-          <p class="message">
-            lorem impsun
-            <span>Кто-то -- 16.11.2024</span>
-          </p>
-        </li>
-
+      <ul id="feedback-container">
         <li class="message-feedback">
-          <p class="feedback" id="feedback">Человек печатает текст</p>
+          <p class="feedback" id="feedback"></p>
         </li>
+      </ul>
+      <ul class="message-container" id="message-container">
       </ul>
       <form class="message-form" id="message-form">
         <input
@@ -52,6 +38,7 @@
           name="message"
           id="message-input"
           class="message-input"
+          placeholder="Написать.."
         />
         <div class="v-divder"></div>
         <button type="submit" class="send-button">
@@ -60,7 +47,12 @@
       </form>
     </div>
     <h3 class="clients-total" id="clients-total">Пользователей в чате: 2</h3>
-    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js"
+      integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="main.js"></script>
   </body>
 </html>
