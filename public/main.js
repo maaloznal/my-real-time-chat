@@ -87,7 +87,9 @@ socket.addEventListener("close", (event) => {
 });
 
 function sendMessage() {
-  if (messageInput.value === "") return;
+  if (messageInput.value === "") {
+    alert('Нельзя отправить пустое сообщение')
+  }
 
   if (socket.readyState !== WebSocket.OPEN) {
     console.error("WebSocket is not open");
