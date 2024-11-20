@@ -30,7 +30,7 @@ modalSubmit.addEventListener("click", () => {
     }
     modal.style.display = "none";
   } else {
-    alert('Пожалуйста, введите имя');
+    alert("Пожалуйста, введите имя");
   }
 });
 
@@ -87,7 +87,9 @@ socket.addEventListener("close", (event) => {
 });
 
 function sendMessage() {
-  if (messageInput.value === "") {return}
+  if (messageInput.value === "") {
+    return;
+  }
 
   if (socket.readyState !== WebSocket.OPEN) {
     console.error("WebSocket is not open");

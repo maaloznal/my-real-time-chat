@@ -21,14 +21,14 @@ wss.on("connection", (ws) => {
 
   socketsConnected.add(socketId);
 
-  const welcomeMessage = `Добро пожаловать! Пожалуйста, введите своё имя.`;
+  // const welcomeMessage = `Добро пожаловать! Пожалуйста, введите своё имя.`;
 
-  ws.send(
-    JSON.stringify({
-      type: "welcome",
-      data: welcomeMessage,
-    })
-  );
+  // ws.send(
+  //   JSON.stringify({
+  //     type: "welcome",
+  //     data: welcomeMessage,
+  //   })
+  // );
 
   broadcastMessage({
     type: "clients-total",
